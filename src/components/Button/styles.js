@@ -4,7 +4,7 @@ const Container = styled.div`
   button {
     padding: 5px;
     border: 2px solid var(--black);
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 5px;
     font-family: "Work Sans", sans-serif;
     font-weight: 900;
