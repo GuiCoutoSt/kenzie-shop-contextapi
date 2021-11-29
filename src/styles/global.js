@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     height: auto;
   }
+
   html,
   body {
     width: 100%;
@@ -33,16 +34,23 @@ export const GlobalStyle = createGlobalStyle`
   body {
     display: flex;
     justify-content: center;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     background-color: var(--white);
+    color: var(--black);
+  }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Pro', serif;
+    color: var(--black);
   }
 
   #root {
+    --black: #403f3e;
     --light-blue: #0099de;
     --blue: #165FBE;
     --yellow: #FDC60A;
-    --green: #FDC60A;
+    --green: #4BAE16;
+    --light-gre: #fcfcfc;
     --grey: #f3f8f4;
     --white: #fff;
     --red: #E8073D;

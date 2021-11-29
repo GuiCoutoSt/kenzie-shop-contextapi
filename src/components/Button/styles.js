@@ -3,22 +3,21 @@ import styled from "styled-components";
 const Container = styled.div`
   button {
     padding: 5px;
-    border: ${(props) =>
-      props.remove ? "2px solid #403f3e" : "2px solid #0099de"};
+    border: 2px solid var(--black);
     border-radius: 10px;
     margin-bottom: 5px;
-    font-family: "Heebo", sans-serif;
-    font-weight: 800;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
     font-size: 1rem;
-    background-color: ${(props) => (props.remove ? "#fff" : "#0099de")};
-    color: ${(props) => (props.remove ? "#403f3e" : "#fff")};
+    background-color: var(--white);
+    color: var(--black);
   }
 
   button:hover {
     transition: 0.3s;
     border-color: ${(props) => (props.remove ? "#E8073D" : "#0099de")};
-    background-color: ${(props) => (props.remove ? "#E8073D" : "#165FBE")};
-    color: ${(props) => props.remove && "#fff"};
+    background-color: ${(props) => (props.remove ? "#E8073D" : "#0099de")};
+    color: var(--white);
   }
 
   button:not(:hover) {

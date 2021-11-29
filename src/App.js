@@ -1,11 +1,10 @@
 import { GlobalStyle } from "./styles/global";
-import Button from "./components/Button";
+import Cards from "./components/Cards";
 
 function App() {
   return (
     <div className="App">
-      <Button children={"Adicionar"} />
-      <Button children={"Remover"} remove />
+      <Cards />
       <GlobalStyle />
     </div>
   );
