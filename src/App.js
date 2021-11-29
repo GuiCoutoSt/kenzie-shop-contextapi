@@ -1,7 +1,12 @@
+import { GlobalStyle } from "./styles/global";
+import Button from "./components/Button";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Button children={"Adicionar"} />
+      <Button children={"Remover"} remove />
+      <GlobalStyle />
     </div>
   );
 }
