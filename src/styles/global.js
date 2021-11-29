@@ -40,17 +40,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Crimson Pro', serif;
     color: var(--black);
   }
 
   #root {
+    width: 100%;
+
     --black: #403f3e;
     --light-blue: #0099de;
     --blue: #165FBE;
     --yellow: #FDC60A;
     --green: #4BAE16;
-    --light-gre: #fcfcfc;
+    --light-grey: #fcfcfc;
     --grey: #f3f8f4;
     --white: #fff;
     --red: #E8073D;
