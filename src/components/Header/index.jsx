@@ -1,13 +1,15 @@
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+
+import { useContext } from "react";
+import { CartContext } from "../../Providers/cart";
 
 import { BiCart } from "react-icons/bi";
 import { Container, IconContainer } from "./styles";
 
 const Header = () => {
   const history = useHistory();
-  const cart = useSelector((state) => state.cart);
+  const { cart } = useContext(CartContext);
 
   return (
     <Container>

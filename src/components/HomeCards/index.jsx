@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../../store/modules/cart/actions";
+import { useContext } from "react";
+import { CartContext } from "../../Providers/cart";
 
 import { BiCoinStack } from "react-icons/bi";
 
@@ -9,15 +9,13 @@ import { Container, Price } from "./styles";
 import { notifyError, notifySuccess } from "../../utils/notifications";
 
 const HomeCards = ({ character, price }) => {
-  const cart = useSelector((state) => state.cart);
-
-  const dispatch = useDispatch();
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   const handleClick = () => {
     if (cart.some((item) => item.id === character.id)) {
       notifyError("item já adicionado!");
     } else {
-      dispatch(addItem(character));
+      addToCart(character);
       notifySuccess("item adicionado!");
     }
   };

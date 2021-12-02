@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { removeItem } from "../../store/modules/cart/actions";
+import { useContext } from "react";
+import { CartContext } from "../../Providers/cart";
 
 import { notifySuccess } from "../../utils/notifications";
 
@@ -9,10 +9,10 @@ import Button from "../Button";
 import { Container, Price, Info, PriceNest } from "./styles";
 
 const CartCards = ({ character }) => {
-  const dispatch = useDispatch();
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   const handleClick = () => {
-    dispatch(removeItem(character.id));
+    removeFromCart(character.id);
     notifySuccess("item removido!");
   };
 

@@ -1,5 +1,5 @@
-import { api } from "../../services/api";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { CatalogueContext } from "../../Providers/catalogue";
 
 import { motion } from "framer-motion";
 
@@ -8,22 +8,7 @@ import HomeCards from "../../components/HomeCards";
 import Container from "./styles";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-
-  const prices = [2902, 3575, 938, 3371, 706, 1917, 3536, 2515, 1164, 3970];
-
-  useEffect(() => {
-    api.get("/characters").then((response) => {
-      setProducts(response.data);
-    });
-  }, []);
-
-  const newArray = products.map((product, index) => {
-    return {
-      ...product,
-      price: prices[index],
-    };
-  });
+  const { pricedCatalogue } = useContext(CatalogueContext);
 
   return (
     <motion.div
@@ -32,7 +17,7 @@ const Home = () => {
       transition={{ type: "spring", stiffness: 100 }}
     >
       <Container>
-        {newArray.map((product) => (
+        {pricedCatalogue.map((product) => (
           <HomeCards
             key={product.id}
             character={product}

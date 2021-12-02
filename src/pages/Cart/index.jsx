@@ -1,4 +1,5 @@
-import { useSelector } from "react-redux";
+import { useContext } from "react";
+import { CartContext } from "../../Providers/cart";
 
 import { motion } from "framer-motion";
 
@@ -9,7 +10,7 @@ import Button from "../../components/Button";
 import { Container, CardNest, Resume, Price, None } from "./styles";
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const { cart, addToCart, RemoveFromCart } = useContext(CartContext);
 
   const cartTotal = cart.reduce((acc, cur) => acc + cur.price, 0);
 
